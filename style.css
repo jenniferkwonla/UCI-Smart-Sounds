@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/*Global CSS variables*/
+:root{
+    --header-height: 3rem;
+
+    --dark-color: #141414;
+    --dark-color-light: #8A8A8A;
+    --dark-color-lighten: #CFEE2;
+    --white-color: #FFFF;
+
+    --body-font: 'Heebo', sans-serif;
+    --big-font-size: 1.2rem;
+    --bigger-font-size: 1.4rem;
+    --biggest-font-size: 1.8rem;
+    --normal-font-size: 0.95rem;
+    --smaller-font-size: 0.8rem;
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+
+    --z-fixed:100;
+
+    --rotate-img: rotate(-60deg)
+}
+/* Responsive Large screens */
+@media screen and (min-width: 768px){
+    :root{
+        --big-font-size: 1.5rem;
+        --bigger-font-size: 2rem;
+        --biggest-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.8rem;
+    }
+}
+
+/* Responsive Medium screens */
+@media screen and (max-width: 768px){
+    :root{
+        --big-font-size: 1rem;
+        --bigger-font-size: 1.5rem;
+        --biggest-font-size: 2rem;
+        --normal-font-size: 0.8rem;
+        --smaller-font-size: 0.4rem;
+    }
+}
+
+/* To before on top of after*/
+*,::before,::after{
+    box-sixing: border-box;
+}
+/* BASE CSS */
+html{
+    scroll-behavior:smooth
+}
+
+body{
+    margin: var(--header-height);
+    padding:0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 80vh;
+}
+
+h1, h2, h3, p, h1{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.navLogo{
+    color:white;
+    width:100%;
+    padding: 0 0 0 20px ;
+}
+
+.rightNav{
+    width:30%;
+    color: white;
+    float: left;
+}
+
+#shoppingLink{
+    width:200px;
+    color: white;
+    text-align:right;
+    float: right;
+    padding: 0 20px 0 0 ;
+}
+
+/* NAV MENU */
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    color: var(--white-color);
+    display:inline-block;
+    white-space:nowrap;
+}
+
+.header1{
+    color: var(--white-color);
+    display:inline-block;
+    position: fixed;
+    width: 100%;
+    height:5vh;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
+
+
+
+.nav{
+    color:white;
+    height: var(--header-height);
+    margin: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@media screen and (min-width: 768px){
+    .topNav{
+        position:fixed;
+        left:-100%;
+        width:30%;
+        height: 100vh;
+        padding-left:50px;
+        background-color: var(--white-color);
+        transition: .5s;
+    }
+}
+
+.navItem{
+    margin-bottom: var(--mb-4);
+}
+
+.shoppingLink{
+    color:white;
+
+}
+
+.navToggle{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.show{
+    left: 0;
+}
+
+.close{
+    left: -100%;
+}
+
+.active{
+    position: relative;
+}
+
+.active::before{
+    content:'';
+    position: absolute;
+    bottom: -.5rem;
+    left: 45%;
+    width: 4px;
+    height: 4px;
+    background-color: var(--dark-color);
+}
+.row {
+    text-align: center;
+    padding: 20px
+}
+
+.col{
+    width: 30%;
+    float: left;
+    text-align:center;
+}
+
+img{
+    width:100%;
+}
+/* tags */
+
+#main{
+    padding-top: var(--header-height);
+    padding-bottom: var(--header-height);
+    justify-content: center;
+    position: relative;
+    min-height: 80vh;
+}
+
+#footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    text-align:center;
+}
+/*body{
+    margin: 0
+}*/
+
+
+/* Responsive Medium screens */

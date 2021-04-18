@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--- RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--- CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../product.css">
+    <!-- ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>SmartSounds| Product</title>
+</head>
+<body>
+<!--- HEADER or nav bd-grid-->
+<header class="header1" id="header">
+    <nav class="nav bd-grid">
+
+        <div class="navToggle" id="nav-toggle">
+            <i class="bx bxs-grid"></i>
+        </div>
+
+        <a href="#" className = "navLogo">my eCommerce</a>
+
+        <div class="topNav" id="top-nav">
+            <ul class="navList">
+                <div class="navClose" id="nav-close">
+                    <i class="bx bx-arrow-back"></i>
+                </div>
+                <li class="navItem"><a href="index.html" class="navLink">Home</a></li>
+                <li class="navItem"><a href="about.html" class="navLink">Team</a></li>
+            </ul>
+        </div>
+        <a class="shoppingLink"><a href="./cart.html" class="shoppingLink"><i class='bx bx-cart' ></i>Shopping cart</a></a>
+    </nav>
+</header>
+
+<main class="main" id="main">
+    <div class="productImages">
+        <img class="mainImage" id="main-image" src="../images/sony1000xm4-black.jpg">
+        <div class="optionsImage">
+            <img class="productOptions" id="sony1000xm4-black" onclick="changeMainImage(this)" src="../images/sony1000xm4-black.jpg">
+            <img class="productOptions" id="sony1000xm4-silver" onclick="changeMainImage(this)" src="../images/sony1000xm4-silver.jpg">
+            <img class="productOptions" id="sony1000xm4-blue" onclick="changeMainImage(this)" src="../images/sony1000xm4-blue.jpg">
+
+        </div>
+    </div>
+
+    <div class="rightColumn">
+        <div class="productName">
+            Sony WH-1000XM4 Wireless Noise-Canceling Over-Ear Headphones
+        </div>
+        <div class="productType">
+            <span>Headphones</span>
+        </div>
+        <div class="productDescription">
+            <p>Best noise-canceling headphones. Lightweight, touch controls, and lasting 3 to 4 hours a day</p>
+        </div>
+        <div class="options">
+            <span>Available colors are Black and Silver.</span>
+        </div>
+        <div class="productPrice">
+            <span>$348</span>
+        </div>
+        <div class="orderForm">
+            <h3>Order form</h3>
+            <form action="mailto:order@" method="post" onSubmit="return (checkInput())" name="OrderForm">
+                <div class="labels"><label>Product name: </label></div><input type="text" name="productname"><br>
+                <div class="labels"><label>Product color: </label></div><input type="text" name="productcolor"><br>
+                <div class="labels"><label>Quantity: </label></div><input type="text" name="quantity"><br>
+                <div class="labels"><label>Ship to: </label></div><input type="text" name="shipto"><br>
+                <div class="labels"><label>Name on credit card: </label></div><input type="text" name="nameoncc"><br>
+                <div class="labels"><label>Shipping address: </label></div><input type="text" name="address"><br>
+                <div class="labels"><label>Shipping method: </label></div>
+                <div class="btn-group" class="">
+                    <button>Overnight</button><button>2-day Expedited</button><button>6-day Ground</button>
+                </div>
+                <div class="labels"><label>Credit card number: </label></div><input type="text" name="ccno"><br>
+                <div class="labels"><label>Expiration date: </label></div>
+                <input type="text" name="ccdate"><br>
+                <div class="labels"><label>CVV: </label></div>
+                <input type="text" name="cvv"><br>
+                <input class="orderButton" type="submit" name="Order" value="Order">
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<!--- FOOTER -->
+<footer id="footer">
+    Copyright &copy; lalalaxcrew
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/product.js"></script>
+</body>
+
+
+
+</html>
+
