@@ -5,8 +5,8 @@
     <!--- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--- CSS -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../product.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
     <!-- ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
@@ -21,7 +21,7 @@
             <i class="bx bxs-grid"></i>
         </div>
 
-        <a href="#" className = "navLogo">my eCommerce</a>
+        <a href="index.html" class = "navLogo"><h3>Smart Sounds</h3></a>
 
         <div class="topNav" id="top-nav">
             <ul class="navList">
@@ -32,22 +32,29 @@
                 <li class="navItem"><a href="about.html" class="navLink">Team</a></li>
             </ul>
         </div>
-        <a class="shoppingLink"><a href="./cart.html" class="shoppingLink"><i class='bx bx-cart' ></i>Shopping cart</a></a>
+        <div class="rightNav">
+            <a id="shoppingLink" href="cart.html" class="shoppingLink"><i class='bx bx-cart' ></i> Shopping cart</a>
+        </div>
     </nav>
 </header>
 
 <main class="main" id="main">
     <div class="productImages">
-        <img class="mainImage" id="main-image" src="../images/sony1000xm4-black.jpg">
-        <div class="optionsImage">
-            <img class="productOptions" id="sony1000xm4-black" onclick="changeMainImage(this)" src="../images/sony1000xm4-black.jpg">
-            <img class="productOptions" id="sony1000xm4-silver" onclick="changeMainImage(this)" src="../images/sony1000xm4-silver.jpg">
-            <img class="productOptions" id="sony1000xm4-blue" onclick="changeMainImage(this)" src="../images/sony1000xm4-blue.jpg">
+        <div class="hoverImage">
+        <img class="mainImage" id="main-image" alt="brand Sony headphones in color black" src="../images/sony1000xm4-black.jpg">
+        </div>
+         <div class="optionsImage">
+            <img class="productOptions" id="sony1000xm4-black" alt="brand Sony headphones in color black" onclick="changeMainImage(this)" src="../images/sony1000xm4-black.jpg">
+            <img class="productOptions" id="sony1000xm4-silver" alt="brand Urbanista headphones in color silver" onclick="changeMainImage(this)" src="../images/sony1000xm4-silver.jpg">
+            <img class="productOptions" id="sony1000xm4-blue" alt="brand Urbanista headphones in color blue" onclick="changeMainImage(this)" src="../images/sony1000xm4-blue.jpg">
 
+        </div>
+        <div class="colorOnView" id="color-on-view">
+            <p>Selected color: Black</p>
         </div>
     </div>
 
-    <div class="rightColumn">
+    <div class="productPage">
         <div class="productName">
             Sony WH-1000XM4 Wireless Noise-Canceling Over-Ear Headphones
         </div>
@@ -61,27 +68,44 @@
             <span>Available colors are Black and Silver.</span>
         </div>
         <div class="productPrice">
-            <span>$348</span>
+            <span>$348.00</span>
         </div>
         <div class="orderForm">
             <h3>Order form</h3>
             <form action="mailto:order@" method="post" onSubmit="return (checkInput())" name="OrderForm">
-                <div class="labels"><label>Product name: </label></div><input type="text" name="productname"><br>
-                <div class="labels"><label>Product color: </label></div><input type="text" name="productcolor"><br>
-                <div class="labels"><label>Quantity: </label></div><input type="text" name="quantity"><br>
-                <div class="labels"><label>Ship to: </label></div><input type="text" name="shipto"><br>
-                <div class="labels"><label>Name on credit card: </label></div><input type="text" name="nameoncc"><br>
-                <div class="labels"><label>Shipping address: </label></div><input type="text" name="address"><br>
-                <div class="labels"><label>Shipping method: </label></div>
-                <div class="btn-group" class="">
-                    <button>Overnight</button><button>2-day Expedited</button><button>6-day Ground</button>
+                <div class="labels"><label>Product name: </label></div><input value="Sony WH-1000XM4 Wireless Noise-Canceling Over-Ear Headphones" type="text" name="productname" id="productname"><br>
+                <div class="labels"><label>Product color: </label></div>
+                <form>
+                    <select name="color" id="color">
+                        <option value="Black" selected="selected">Black</option>
+                        <option value="Silver">Silver</option>
+                    </select>
+                </form>
+                <div class="labels"><label>Quantity: </label></div><input type="text" name="quantity" id="quantity"><br><br>
+                <div class="labels"><label>First and Last name: </label></div><input type="text" name="shipto" id="shipto"><br>
+                <div class="labels"><label>Phone number: </label></div><input type="text" name="phone" id="phone" placeholder="555-555-5555"><br>
+                <div class="labels"><label>Email: </label></div><input type="text" name="email" id="email"><br><br>
+                <div class="labels"><label>Shipping address: </label></div><input type="text" name="address" id="address"><br>
+                <div class="labels"><label>City: </label></div><input type="text" name="address" id="city">
+                <div>
+                    <div class="labels"><label>State: </label></div><input type="text" name="address" id="state">
                 </div>
-                <div class="labels"><label>Credit card number: </label></div><input type="text" name="ccno"><br>
+                <div class="labels"><label>Zipcode: </label></div><input type="text" name="address" id="zipcode"><br>
+                <div class="labels"><label>Shipping method: </label></div>
+                <form>
+                    <select name="shipmethod" id="shipmethod">
+                        <option value="6-day Ground" selected="selected">6-day Ground</option>
+                        <option value="2-day Expedited">2-day Expedited</option>
+                        <option value="Overnight">Overnight</option>
+                    </select>
+                </form>
+                <div class="labels"><label>Name on credit card: </label></div><input type="text" name="nameoncc" id="nameoncc"><br>
+                <div class="labels"><label>Credit card number: </label></div><input type="text" name="ccno" id="ccno"><br>
                 <div class="labels"><label>Expiration date: </label></div>
-                <input type="text" name="ccdate"><br>
+                <input type="text" name="ccdate" id="ccdate" placeholder="mm/yyyy"><br>
                 <div class="labels"><label>CVV: </label></div>
-                <input type="text" name="cvv"><br>
-                <input class="orderButton" type="submit" name="Order" value="Order">
+                <input type="text" name="cvv" id="cvv"><br>
+                <input class="orderButton" onclick="sendOrder()" id="submit" type="submit" name="order" value="Order">
             </form>
         </div>
 
@@ -90,7 +114,7 @@
 
 <!--- FOOTER -->
 <footer id="footer">
-    Copyright &copy; lalalaxcrew
+    Copyright &copy; Smart Sounds
 </footer>
 
 <script src="../js/main.js"></script>

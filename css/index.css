@@ -1,0 +1,76 @@
+
+.home {
+    justify-content:center;
+    align-content: center;
+}
+
+main{
+    margin-top: 100px;
+}
+
+.col{
+    margin: 0 1.5rem 5rem 1.5rem;
+    float:left;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.row{
+    float:left;
+    display:grid;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#product-name{
+    padding-left:10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: darkred;
+}
+
+#product-brand{
+    padding-left:10px;
+    color: darkgrey;
+    font-size: 0.7rem;
+}
+
+#product-price{
+    padding-left:10px;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+@media only screen and (min-width: 1200px) {
+    .row {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .row{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 768px){
+    .row{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+

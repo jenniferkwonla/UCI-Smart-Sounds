@@ -56,7 +56,3 @@ function scrollActive(){
         }
     })
 }
-
-function testFunction(){
-    return "./product.html"
-}

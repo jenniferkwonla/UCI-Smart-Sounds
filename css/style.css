@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/*Global CSS variables*/
+:root{
+    --header-height: 2rem;
+    --dark-color: #141414;
+    --dark-color-light: #8A8A8A;
+    --dark-color-lighten: #CFEE2;
+    --white-color: #FFFF;
+    --body-font: 'Heebo', sans-serif;
+    --z-fixed:100;
+
+}
+/* Responsive Large screens */
+@media screen and (max-width: 768px){
+}
+
+@media screen and (min-width: 768px){
+    .topNav{
+        position:fixed;
+        top: 5%;
+        left:-100%;
+        width:30%;
+        height: 100vh;
+        padding-left:50px;
+        background-color: var(--white-color);
+        transition: .5s;
+    }
+}
+
+@media screen and (max-width: 600px){
+}
+
+@media screen and (min-width: 600px){
+}
+
+
+/* BASE CSS */
+html{
+    scroll-behavior:smooth
+}
+
+body{
+    margin-left: var(--header-height);
+    margin-right: var(--header-height);
+    padding:0;
+    font-family: var(--body-font);
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 80vh;
+}
+
+img{
+    width:100%;
+}
+
+h1, h2, h3, p, h1{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+/* NAV MENU */
+header{
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    color: var(--white-color);
+    display:inline-block;
+    white-space:nowrap;
+    height:5vh;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
+
+/* Slider navigation menu*/
+.navLogo{
+    color:white;
+    width:100%;
+    padding: 0 0 0 20px ;
+}
+
+.navToggle{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.topNav{
+    position:fixed;
+    top: 4%;
+    left:-100%;
+    width:30%;
+    height: 100vh;
+    padding-left:50px;
+    background-color: var(--white-color);
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav{
+    color:white;
+    height: var(--header-height);
+    margin: 10px;
+    display:flex;
+}
+
+.navItem{
+    margin-bottom: 2rem;
+}
+
+
+.show{
+    left: 0;
+}
+
+.close{
+    left: -100%;
+}
+
+/* Shopping nav */
+.rightNav{
+    width:30%;
+    float: left;
+}
+
+#shoppingLink{
+    width:200px;
+    color: white;
+    text-align:right;
+    float: right;
+    padding: 0 20px 0 0 ;
+}
+
+#main{
+    padding: var(--header-height);
+    justify-content: center;
+    position: relative;
+    min-height: 80vh;
+}
+
+#footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: var(--header-height);
+    justify-content: center;
+    text-align:center;
+}

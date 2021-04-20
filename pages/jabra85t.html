@@ -40,11 +40,12 @@
 <main class="main" id="main">
     <div class="productImages">
         <div class="hoverImage">
-        <img class="mainImage" id="main-image" alt="brand Sennheiser headphones in color black" src="../images/sennheiser-black.jpg">
+        <img class="mainImage" id="main-image" salt="brand Jabra earbuds in color black" src="../images/jabra85t-titanium-black.jpg">
         </div>
         <div class="optionsImage">
-            <img class="productOptions" id="sennheiser-black" alt="brand Sennheiser headphones in color black" onclick="changeMainImage(this)" src="../images/sennheiser-black.jpg">
-            <img class="productOptions" id="sennheiser-white" alt="brand Sennheiser headphones in color white" onclick="changeMainImage(this)" src="../images/sennheiser-white.jpg">
+            <img class="productOptions" id="jabra85t-titanium-black" alt="brand Jabra earbuds in color black" onclick="changeMainImage(this)" src="../images/jabra85t-titanium-black.jpg">
+            <img class="productOptions" id="jabra85t-gold-beige" alt="brand Jabra earbuds in color gold beige"onclick="changeMainImage(this)" src="../images/jabra85t-gold-beige.jpg">
+            <img class="productOptions" id="jabra85t-copper-black" alt="brand Jabra earbuds in color copper lack" onclick="changeMainImage(this)" src="../images/jabra85t-copper-black.jpg">
         </div>
         <div class="colorOnView" id="color-on-view">
             <p>Selected color: Black</p>
@@ -53,34 +54,36 @@
 
     <div class="productPage">
         <div class="productName">
-            Sennheiser Game One Gaming Headset
+            Jabra Elite 85t
         </div>
         <div class="productType">
-            <span>Headphones</span>
+            <span>Earbuds</span>
         </div>
         <div class="productDescription">
-            <p>Most comfortable gaming headset. Lasts long periods of time and with consoles.</p>
+            <p>Best earbuds for Android users. Sleek, water resistant, and 5.5 hours of battery life.</p>
+
         </div>
         <div class="options">
-            <span>Available colors are Black and White</span>
+            <span>Available colors Titanium Black, Gold Beige, and Copper Black.</span>
         </div>
         <div class="productPrice">
-            <span>$129.99</span>
+            <span>$179.99</span>
         </div>
         <div class="orderForm">
             <h3>Order form</h3>
-            <form action="mailto:order@" method="post" onSubmit="sendOrder()" name="OrderForm">
+            <form action="sendOrder()" method="post" onSubmit="sendOrder()" name="OrderForm">
                 <div class="labels"><label>Product name: </label></div><input type="text" name="productname" id="productname"><br>
                 <div class="labels"><label>Product color: </label></div>
                 <form>
                     <select name="color" id="color">
-                        <option value="Black " selected="selected">Black </option>
-                        <option value="White">White</option>
+                        <option value="Titanium Black" selected="selected">Titanium Black</option>
+                        <option value="Gold Beige">Gold Beige</option>
+                        <option value="Copper Black">Copper Black</option>
                     </select>
                 </form>
                 <div class="labels"><label>Quantity: </label></div><input type="text" name="quantity" id="quantity"><br><br>
-                <div class="labels"><label>First and Last name: </label></div><input value="Sennheiser Game One Gaming Headset" type="text" name="shipto" id="shipto"><br>
-                <div class="labels"><label>Phone number: </label></div><input type="text" name="phone" id="phone" placeholder="555-555-5555"><br>
+                <div class="labels"><label>First and Last name: </label></div><input value="Jabra Elite 85t" type="text" name="shipto" id="shipto"><br>
+                <div class="labels"><label>Phone number: </label></div><input type="text" name="phone" id="phone" placeholder="555-555-5555" id="phone"><br>
                 <div class="labels"><label>Email: </label></div><input type="text" name="email" id="email"><br><br>
                 <div class="labels"><label>Shipping address: </label></div><input type="text" name="address" id="address"><br>
                 <div class="labels"><label>City: </label></div><input type="text" name="address" id="city">
@@ -90,7 +93,7 @@
                 <div class="labels"><label>Zipcode: </label></div><input type="text" name="address" id="zipcode"><br>
                 <div class="labels"><label>Shipping method: </label></div>
                 <form>
-                    <select name="shipmethod" id="shipmethod">
+                    <select name="shipmethod" id="shipmethod" id="shipmethod">
                         <option value="6-day Ground" selected="selected">6-day Ground</option>
                         <option value="2-day Expedited">2-day Expedited</option>
                         <option value="Overnight">Overnight</option>
