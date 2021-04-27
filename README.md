@@ -1,4 +1,5 @@
 # Smart Sounds
+
 Author: Jennifer Kwon
 UCI Spring 2021 IN4MTX 124 Internet Applications Engineering</br>
 PA1-Dynamic Website
