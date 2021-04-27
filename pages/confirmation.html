@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/confirmation.css">
     <!-- ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>SmartSounds| Product</title>
+    <title>SmartSounds| Confirmation</title>
 </head>
 <body>
 <!--- HEADER or nav bd-grid-->
@@ -21,7 +21,7 @@
             <i class="bx bxs-grid"></i>
         </div>
 
-        <a href="#" className = "navLogo">my eCommerce</a>
+        <a href="index.html" class="navLogo">Smart Sounds</a>
 
         <div class="topNav" id="top-nav">
             <ul class="navList">
@@ -32,26 +32,25 @@
                 <li class="navItem"><a href="about.html" class="navLink">Team</a></li>
             </ul>
         </div>
-        <a class="shoppingLink"><a href="./cart.html" class="shoppingLink"><i class='bx bx-cart' ></i>Shopping cart</a></a>
+        <a id="shoppingLink" href="cart.html" class="shoppingLink"><i class='bx bx-cart' ></i> Shopping cart</a>
     </nav>
 </header>
 
+<main>
+    <div class="confirmation">
+    <h1>Thank you. Your order will be shipped shortly!</h1>
+    <p>Your order includes</p>
+    </div>
+</main>
+
 <!--- FOOTER -->
 <footer id="footer">
-    Copyright &copy; lalalaxcrew
+    Copyright &copy; Smart Sounds
 </footer>
 
 <script src="../js/main.js"></script>
 <script src="../js/product.js"></script>
 
-<script>
-    let params = new URL(document.location).searchParams
-    let productname = params.get("productname")
-    let quantity= params.get("quantity")
-    let color = params.get("color")
-    let recipient= params.get("shipto")
-
-</script>
 
 </body>
 </html>

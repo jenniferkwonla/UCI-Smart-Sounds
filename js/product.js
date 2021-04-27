@@ -1,5 +1,5 @@
 function sendOrder(){
-    if (checkInput()){
+    if(checkInput()){
         let br='%0D%0A';
         let name=document.getElementById("shipto").value;
         let phone =document.getElementById("phone").value;
@@ -10,16 +10,23 @@ function sendOrder(){
         let quantity = document.getElementById("quantity").value;
         let color=document.getElementById("color").value;
         let body="PURCHASE ORDER" + br + br +
-            "Ship to: " + name + br + "Phone: " + phone + br + "Email: " + email +
+            "Ship to: " + name + br + "Phone: " + phone + br + "Email: " + email + br +
             "Address: " + address + br + "Ship method: " + shippingmethod + br +
             "Product: " + productname + br + "Quantity: " + quantity + br+ "Color: " + color;
-        let val = "location.href='mailto:order@smartsounds.com?subect=Confirmation&body="+body+"'";
-        document.getElementById("submit").setAttribute("onclick", val);
-        document.getElementById("order-form").setAttribute("action", val);
-        return val;
-    };
-}
+        let val = "location.href='mailto:order@smartsounds.com?subject=Confirmation&body="+body+"'";
+        let val2 = "location.href='mailto:ordercheck@smartsounds.com?subject=Confirmation&body="+body+"'";
 
+        document.getElementById("submit").setAttribute("onclick", val);
+        document.getElementById("order-form").setAttribute("action", "confirmation.html");
+        //window.location.href="confirmation.html";
+        return val;
+    }
+}
+document.getElementById("submit").addEventListener("click", function() {
+
+    sendOrder();
+
+});
 function checkInput(){
     var productname = document.getElementById("productname").value;
     var productcolor = document.getElementById("color").value;
@@ -97,6 +104,7 @@ function checkInput(){
         if(check === false){
             alertText= alertText + "\nemail is wrong format";
             ready = false;
+            document.getElementById("email").value="";
         }
     }
     if (nameoncc === undefined || nameoncc.length === 0 || nameoncc.trim.value === ""){
@@ -107,7 +115,7 @@ function checkInput(){
         alertText= alertText + "\nshipping address";
         ready = false;
     }
-    if (city === undefined || city.length === 0 || acity.trim.value === ""){
+    if (city === undefined || city.length === 0 || city.trim.value === ""){
         alertText= alertText + "\ncity";
         ready = false;
     }
@@ -129,6 +137,7 @@ function checkInput(){
             if (ccno.length !== 13 || ccno.length !== 16) {
                 alertText = alertText + "\ncredit card number is invalid";
                 ready = false;
+                document.getElementById("ccno").value="";
             }
         }
         // Check amex: begins with a 3, followed by a 4 or 7, length of 15
@@ -136,11 +145,13 @@ function checkInput(){
             if (ccno.charAt(1) !== '4' || (ccno.charAt(1) !== '7')){
                 alertText = alertText + "\ncredit card number is invalid";
                 ready = false;
+                document.getElementById("ccno").value="";
             }
             else{
                 if(ccno.length !== 15){
                     alertText = alertText + "\ncredit card number is invalid";
                     ready = false;
+                    document.getElementById("ccno").value="";
                 }
             }
         }
@@ -149,6 +160,7 @@ function checkInput(){
             if(ccno.length !== 16){
                 alertText = alertText + "\ncredit card number is invalid";
                 ready = false;
+                document.getElementById("ccno").value="";
             }
         }
     }
@@ -163,24 +175,29 @@ function checkInput(){
         if(parseInt(month) > 12 || parseInt(month) === 0){
             alertText= alertText + "\ncredit card expiration month is wrong";
             ready=false;
+            document.getElementById("ccdate").value="";
         }
         if(year.length >= 1 && year.length <= 3){
             alertText= alertText + "\ncredit card expiration year is wrong";
             ready=false;
+            document.getElementById("ccdate").value="";
         }
-        if (isNaN(parse(month)) || isNaN(parse(year)) ){
+        if (isNaN(parseInt(month)) || isNaN(parseInt(year)) ){
             alertText= alertText + "\ncredit card expiration date is wrong";
             ready=false;
+            document.getElementById("ccdate").value="";
         }
     }
     if (cvv === undefined || cvv.length > 3 || cvv.length < 1|| cvv.trim === ""){
         alertText= alertText + "\ncredit card cvv";
         ready = false;
+        document.getElementById("ccdate").value="";
     }
     if(ready === false){
         alert(alertText + "\n\nFill out the missing fields to send order.");
         return false;
     }
+
     return true;
 }
 
@@ -193,45 +210,4 @@ function changeMainImage(e){
     document.getElementById("color-on-view").innerHTML="Selected color: " + cap_color.join(" ");;
 }
 
-function addZoom(target){
-
-    var container= document.getElementById(target);
-    var imagesrc = container.currentStyle || window.getComputedStyle(container, false);
-    imagesrc = imagesrc.backgroundImage.slice(4, -1).replace(/"/g, "");
-    var image = new Image();
-
-    image.src = imagesrc;
-    image.onload=function(){
-        var imageWidth = image.naturalWidth;
-        var imageHeight = image.naturalHeight;
-        var ratio = imageHeight/imageWidth;
-        var percentage = ratio * 100 + '%';
-
-        container.onmousemove = function(e){
-            var boxWidth = container.clientWidth;
-            var rect = e.target.getBoundingClientRect();
-            var xPos = e.clientX - rect.left;
-            var yPos = e.clientY - rect.top;
-            var xPercent = xPos / (boxWidth / 100) + "%";
-            var yPercent = yPos/ ((boxWidth * ratio) / 100) + "%";
-
-            Object.assign(container.style, {
-                backgroundPosition: xPercent + ' ' + yPercent,
-                backgroundSize: imageWidth + 'px'
-            });
-        };
-
-        container.onmouseleave = function(e){
-            Object.assign(container.style, {
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'
-            });
-        };
-    }
-
-};
-
-window.addEventListener("load", function(){
-    addZoom("main-image");
-});
 

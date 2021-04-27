@@ -70,10 +70,11 @@
             <span>$159.99</span>
         </div>
         <section>
+
         <div class="orderForm">
             <h3>Order form</h3>
-            <form method="post" id="order-form" onSubmit="sendOrder()" name="OrderForm">
-                <div class="labels"><label>Product name: </label></div><input type="text" value="AfterShokz Aeropex Headphones" name="productname" id="productname"><br>
+            <form action="confirmation.html"  method="post" id="order-form" name="OrderForm">
+                <div class="labels"><label>Product name: </label></div><input required type="text" value="AfterShokz Aeropex Headphones" name="productname" id="productname"><br>
                 <div class="labels"><label>Product color: </label></div>
                     <form>
                         <select name="color" id="color">
@@ -83,17 +84,17 @@
                             <option value="Blue Eclipse">Blue Eclipse</option>
                         </select>
                     </form>
-                <div class="labels"><label>Quantity: </label></div><input type="text" name="quantity" id="quantity"><br><br>
-                <div class="labels"><label>First and Last name: </label></div><input type="text" name="shipto" id="shipto"><br>
-                <div class="labels"><label>Phone number: </label></div><input type="text" name="phone" id="phone" placeholder="555-555-5555"><br>
-                <div class="labels"><label>Email: </label></div><input type="text" name="email" id="email"><br>
+                <div class="labels"><label>Quantity: </label></div><input required type="text" name="quantity" id="quantity"><br><br>
+                <div class="labels"><label>First and Last name: </label></div><input required type="text" name="shipto" id="shipto"><br>
+                <div class="labels"><label>Phone number: </label></div><input required type="text" name="phone" id="phone" placeholder="555-555-5555" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
+                <div class="labels"><label>Email: </label></div><input pattern= "" type="text" name="email" id="email"><br>
                 <br>
                 <div class="labels"><label>Shipping address: </label></div><input type="text" name="address" id="address"><br>
                 <div class="labels"><label>City: </label></div><input type="text" name="address" id="city">
                 <div>
                 <div class="labels"><label>State: </label></div><input type="text" name="address" id="state">
                 </div>
-                <div class="labels"><label>Zipcode: </label></div><input type="text" name="address" id="zipcode"><br>
+                <div class="labels"><label>Zipcode: </label></div><input pattern= "(\d{5}([\-]\d{4})?)" type="text" name="address" id="zipcode"><br>
                 <div class="labels"><label>Shipping method: </label></div>
                 <form>
                     <select name="shipmethod" id="shipmethod">
@@ -108,7 +109,7 @@
                 <input type="text" name="ccdate" id="ccdate" placeholder="mm/yyyy"><br>
                 <div class="labels"><label>CVV: </label></div>
                 <input type="text" name="cvv" id="cvv"><br>
-                <input class="orderButton" onclick="sendOrder()" id="submit" type="submit" name="order" value="Order">
+                <button class="orderButton"  id="submit" type="submit" name="order" value="Order">Order</button>
             </form>
         </div>
         </section>
@@ -123,6 +124,32 @@
 
 <script src="../js/main.js"></script>
 <script src="../js/product.js"></script>
+
+<script>
+    function getDetail(){
+        if (checkInput()){
+            let br='%0D%0A';
+            let name=document.getElementById("shipto").value;
+            let phone =document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let address = document.getElementById("address").value;
+            let shippingmethod= document.getElementById("shipmethod").value;
+            let productname = document.getElementById("productname").value;
+            let quantity = document.getElementById("quantity").value;
+            let color=document.getElementById("color").value;
+            let body="PURCHASE ORDER" + br + br +
+                "Ship to: " + name + br + "Phone: " + phone + br + "Email: " + email + br +
+                "Address: " + address + br + "Ship method: " + shippingmethod + br +
+                "Product: " + productname + br + "Quantity: " + quantity + br+ "Color: " + color;
+            let val2 = "'mailto:order@smartsounds.com?subect=Confirmation&body="+body+"'";
+
+            let val = "location.href='mailto:order@smartsounds.com?subect=Confirmation&body="+body+"'";
+            document.getElementById("submit").setAttribute("onclick", val);
+            document.getElementById("order-form").setAttribute("action", val);
+            return val2;
+        };
+    }
+</script>
 </body>
 
 
