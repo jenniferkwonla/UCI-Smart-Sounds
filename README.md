@@ -4,23 +4,12 @@ Author: Jennifer Kwon</br>
 UCI Spring 2021 IN4MTX 124 Internet Applications Engineering</br>
 PA1-Dynamic Website
  
-<div style="width:200px">
-<img width="635" alt="ecommerce website for headphones" src="https://user-images.githubusercontent.com/54009911/116306331-c725c000-a759-11eb-931c-f5017509bd1a.png">
+<img width="500" alt="Headphones ecommerce website" src="https://user-images.githubusercontent.com/54009911/116500559-a47fce00-a863-11eb-90bb-0f860afd34fe.png">
+
+<img width="500" alt="Product page for ecommerce website" src="https://user-images.githubusercontent.com/54009911/116500665-dc871100-a863-11eb-94d8-2a03e116ad50.png">
  </div>
- <div style="width:200px">
-<img style="border: 1px solid #ECECEC" width="635" alt="black headphones from Anker" src="https://user-images.githubusercontent.com/54009911/116306338-c8ef8380-a759-11eb-850c-8c0334345d8a.png">
- </div>
- 
- 
-## Assignment 1 Requirements: <br/>
 
-Requirement 1: open the nav menu on top left and click Team<br/>
-* See navigation menu below:  <br/>![alt text](images/nav-menu.png)
-
-Requirement 2-5: on home page
-* Note click Order button twice to open email client
-
-Requirement 5-11: on product page hover over main image.
+<img width="500" alt="Order form on ecommerce website" src="https://user-images.githubusercontent.com/54009911/116500740-09d3bf00-a864-11eb-87de-af63f3eb7c79.png">
 
 
 
